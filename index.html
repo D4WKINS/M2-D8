@@ -21,18 +21,47 @@
 		<style>
 			.columns{
 				height:400px;
+				border-radius: 10px;
+				border: solid 5px black;
+				overflow:hidden;
+				animation-name: fadeIn;
+				animation-duration: 4s;
+				animation-fill-mode: forwards;
+			
 			}
+
+			@keyframes fadeIn{
+
+				0%{
+					opacity: 0;
+					filter:blur(128px);
+				}
+
+				100%{
+					opacity:1;
+					
+					/* transform:translateY(25%); */
+				}
+			}
+
 			.col1 {
 				background-color: #6bb56b;
-				border: 1px solid gray;
 			}
+
 			.col2 {
 				background-color: #299bff;
-				border: 1px solid gray;
 			}
+
 			.col3 {
 				background-color: #ffe631;
-				border: 1px solid gray;
+				border:none;
+				border-radius:0px;
+			}
+
+			.v-align-center{
+				display:flex;
+				flex-direction:column;
+				justify-content: center;
 			}
 
 			@media (min-width: 1000px) {
@@ -50,15 +79,16 @@
 			</nav>
 		</div>
 
-		<div class="container text-center px-5 my-5">
+		<div class="container text-center px-5 my-5 ">
 			<h1>Exercise 1</h1>
 			<div class="row columns">
-				<div class="col-12 col-md-6 col1 ">col1</div>
-				<div class="col-12 col-md-2 col2">col2</div>
-				<div class="col-12 col-md-4 col3 d-flex flex-column ">
-					<div class="h-100">row1</div>
-					<div class="h-100">row2</div>
-					<div class="h-100">row3</div>
+				<div class="col-12 col-md-6 col1 d-flex flex-column justify-content-center">col1</div>
+				<div class="col-12 col-md-2 col2 d-flex flex-column justify-content-end">col2</div>
+				<div class="col-12 col-md-4 col3 d-flex flex-column columns h-100 p-0">
+					<div class="h-100 v-align-center ">row1</div>
+					<div class="h-100 v-align-center ">row2</div>
+					<div class="h-100 v-align-center">row3</div>
+					<!-- class="h-100" -->
 				</div>
 			</div>
 		</div>
